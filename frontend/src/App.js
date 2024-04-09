@@ -2,8 +2,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-import AddStock from './components/Stock-Managing/Add Stock/AddStock';
-import Stocks from './components/Stock-Managing/Stock/Stocks';
+import AddFood from './components/Food Ordering/Admin/Add Food/AddFood';
+import Foods from './components/Food Ordering/Admin//Food/Foods';
 
 
 function App() {
@@ -11,10 +11,10 @@ function App() {
     <div >
       <Router>
         <Routes>
-          {/* Budget Routes */}
+          {/* Admin-Food Adding */}
           
-          <Route exact path="/" element={<AddStock />} />
-          <Route exact path="/stocks" element={<Stocks />} />
+          <Route exact path="/" element={<AddFood />} />
+          <Route exact path="/foods" element={<Foods />} />
 
         </Routes>
       </Router>
