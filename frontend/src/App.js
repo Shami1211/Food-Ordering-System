@@ -12,6 +12,7 @@ import FoodDetails from './components/Food Ordering/User/Food/FoodDetails';
 import AddToCart from './components/Food Ordering/User/Cart/AddtoCart';
 import ViewCart from './components/Food Ordering/User/Cart/Carts';
 import AddDelivery from './components/Food Ordering/User/AddDelivery/AddDelivery';
+import EditCartItem from './components/Food Ordering/User/Cart/EditCartItem';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route exact path="/add-to-cart" element={<AddToCart />} />
           <Route exact path="/view-cart" element={<ViewCart />} />
           <Route exact path="/add-delivery" element={<AddDelivery />} />
+          <Route path="/update-cart/:id" element={<EditCartItem />} />
 
         </Routes>
       </Router>

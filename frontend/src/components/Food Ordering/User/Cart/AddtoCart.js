@@ -37,15 +37,14 @@ const AddToCart = () => {
       [name]: value,
     }));
 
-    if (name === 'price' || name === 'qty') {
-      const totalPrice = parseFloat(item.price) * parseInt(item.qty);
+    if (name === 'qty' || name === 'price') {
+      const totalPrice = parseFloat(value) * parseFloat(item.price);
       setItem((prevState) => ({
         ...prevState,
         total: totalPrice.toFixed(2),
       }));
     }
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Submitting form...');

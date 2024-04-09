@@ -43,6 +43,8 @@ const Carts = () => {
     }
   };
 
+ 
+
   return (
     <div className="carts-container">
       <h2 className="carts-header">Cart Details</h2>
@@ -69,7 +71,12 @@ const Carts = () => {
                     <p>Price: ${cart.price}</p>
                     <p>Quantity: {cart.qty}</p>
                     <p>Total: ${cart.total}</p>
-                    <button onClick={() => handleRemoveFromCart(cart._id)}>Remove from Cart</button>
+                    <div className="cart-item-buttons">
+                      <button onClick={() => handleRemoveFromCart(cart._id)}>Remove from Cart</button>
+                      <Link to={`/update-cart/${cart._id}`}>
+                        <button>Edit</button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -77,8 +84,8 @@ const Carts = () => {
                 <h3>You have to pay: ${totalAmount.toFixed(2)}</h3>
               </div>
               <Link to="/add-delivery">
-          <button>ChechOut</button>
-        </Link>
+                <button>Checkout</button>
+              </Link>
             </div>
           )}
         </div>
