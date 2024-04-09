@@ -27,7 +27,7 @@ const AddStock = () => {
     try {
       await axios.post('http://localhost:5000/foods/', inputs);
       alert('Food item added successfully.');
-      history('/foods'); // Navigate to foods page after successful submission
+      history('/admin-foods'); // Navigate to foods page after successful submission
     } catch (error) {
       console.error('Error submitting food:', error);
       // Handle error and provide feedback to the user
