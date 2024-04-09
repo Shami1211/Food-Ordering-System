@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const FoodDetails = () => {
   const { id } = useParams();
+  const navigate = useNavigate(); // Initialize useNavigate
   const [food, setFood] = useState(null);
   const [cartMessage, setCartMessage] = useState('');
 
@@ -21,8 +22,8 @@ const FoodDetails = () => {
   }, [id]);
 
   const handleAddToCart = () => {
-    // You can implement your cart functionality here, e.g., add the food item to the cart state
-    setCartMessage('Item added to cart!');
+    // Pass food details to AddToCart component
+    navigate('/add-to-cart', { state: { food } });
   };
 
   if (!food) {

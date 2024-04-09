@@ -7,6 +7,8 @@ const Food = ({ food, onDelete }) => {
 
 
   return (
+    <div>
+      
     <div style={{ border: '1px solid #ccc', margin: '10px', padding: '10px' }}>
       <h3>{name}</h3>
       <img src={image} alt={name} style={{ width: '200px', height: '200px', objectFit: 'cover' }} />
@@ -16,6 +18,7 @@ const Food = ({ food, onDelete }) => {
       <Link to={`/food-details/${_id}`}>
         <button>View</button>
       </Link>
+    </div>
     </div>
   );
 };
@@ -43,6 +46,9 @@ const Foods = () => {
 
   return (
     <div>
+        <Link to="/view-cart">
+          <button>View CART</button>
+        </Link>
       <h1>Food Items List</h1>
       {alertMessage && <div style={{ color: 'red' }}>{alertMessage}</div>}
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
